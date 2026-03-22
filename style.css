@@ -1,0 +1,214 @@
+/* =========================
+GLOBAL SETTINGS
+========================= */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f4f6f8;
+}
+
+/* =========================
+🌈 ANIMATED HEADER
+========================= */
+.header {
+  background: linear-gradient(270deg, #ff6a00, #ff3f34, #ffb347, #ff6a00);
+  background-size: 600% 600%;
+  animation: gradientMove 8s ease infinite;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 5px 20px rgba(255, 87, 34, 0.5);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Logo */
+.logo {
+  width: 50px;
+  vertical-align: middle;
+  margin-right: 10px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Title */
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+
+/* =========================
+🧭 NAVBAR
+========================= */
+.nav {
+  background: #222;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: white;
+  padding: 12px 18px;
+  text-decoration: none;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.nav a:hover {
+  background: #ff7043;
+}
+
+/* =========================
+🔍 SEARCH BAR
+========================= */
+.search {
+  margin-top: 10px;
+  padding: 12px;
+  width: 60%;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+}
+
+/* =========================
+📦 CONTAINER
+========================= */
+.container {
+  padding: 20px;
+}
+
+/* =========================
+🧱 GRID SYSTEM
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+/* Recipe Image Style */
+.recipe-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  display: block;
+  margin: 20px auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.recipe-img:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+/* =========================
+📋 CARDS
+========================= */
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Card text */
+.card h3 {
+  margin: 10px 0;
+}
+
+/* =========================
+🔘 BUTTONS
+========================= */
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 10px;
+  background: linear-gradient(45deg, #ff7043, #ff3f34);
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #ff3f34, #ff7043);
+}
+
+/* =========================
+📄 SECTIONS
+========================= */
+.section {
+  padding: 30px;
+  text-align: center;
+}
+
+/* =========================
+📞 FORMS
+========================= */
+input, textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 8px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+/* =========================
+🔻 FOOTER
+========================= */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* =========================
+📱 MOBILE RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  .search {
+    width: 90%;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+}

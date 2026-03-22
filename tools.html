@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tools</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <h1>
+    <img src="C:\Users\Saanvi\Downloads\logo.png" class="logo">
+    BhartiKitchen
+  </h1>
+  <p>Simple Recipes, Delicious Taste</p>
+<h2>Kitchen Tools</h2>
+</header>
+<nav class="nav">
+<a href="index.html">Home</a>
+<a href="recipes.html">Recipes</a>
+<a href="tools.html">Tools</a>
+<a href="contact.html">Contact</a>
+</nav>
+<div class="card">
+<h3>BMI Calculator</h3>
+
+<input id="weight" placeholder="Weight (kg)">
+<input id="height" placeholder="Height (cm)">
+
+<button onclick="calculateBMI()" class="btn">Calculate BMI</button>
+
+<p id="result"></p>
+</div>
+
+<script>
+function calculateBMI() {
+  let w = document.getElementById("weight").value;
+  let h = document.getElementById("height").value;
+
+  if(w === "" || h === "") {
+    document.getElementById("result").innerText = "Please enter all values";
+    return;
+  }
+
+  h = h / 100; // convert cm to meter
+  let bmi = (w / (h * h)).toFixed(2);
+
+  let category = "";
+
+  if (bmi < 18.5) {
+    category = "Underweight 😟";
+  } else if (bmi < 24.9) {
+    category = "Normal ✅";
+  } else if (bmi < 29.9) {
+    category = "Overweight ⚠️";
+  } else {
+    category = "Obese ❌";
+  }
+
+  document.getElementById("result").innerHTML =
+    "Your BMI: <b>" + bmi + "</b><br>Status: " + category;
+}
+</script>
+
+</body>
+</html>
